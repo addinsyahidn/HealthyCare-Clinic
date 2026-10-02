@@ -1,0 +1,6 @@
+Lokasi Penyimpanan File Kustom
+1. \pages = menyimpan file html lain
+2. \public = menyimpan gambar (.ico)
+3. \public\images = menyimpan gambar (.png, .jpg, dll)
+4. \public\fonts = menimpan gaya tulis kustom
+5. \src\components = menyimpan file javascript
