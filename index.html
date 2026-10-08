@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,8 +8,49 @@
   </head>
   <body>
     <header></header>
-    <main></main>
+    <main>
+      <section id="layanan"></section>
+
+      <!-- Bagian Addin -->
+      <section id="dokter" class="py-16">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="mb-10 text-center text-3xl font-bold text-gray-800">
+            Dokter Kami
+          </h2>
+
+          <div id="doctor-grid" class="doctor-grid">
+            <article class="doctor-card" data-specialty="anak">
+              <img
+                class="doctor-photo"
+                src="assets/img/dokter-1.jpg"
+                alt="dr. Albert Eipstein"
+              />
+              <h3 class="doctor-name">dr. Albert Eipstein</h3>
+              <p class="doctor-specialty">Sp. Anak</p>
+              <p class="doctor-schedule">Senin &amp; Rabu, 09.00 - 14.00</p>
+              <button type="button" class="btn-primary" data-id="1">
+                Detail
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Batas Addin -->
+    </main>
     <footer></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
+
+<!-- Sementara punya Addin
+      <section id="dokter">
+        <div class="flex">
+          <img src="" />
+          <div>
+            <h3>nama</h3>
+            <p class="sp">Sp. [spesialisasi]</p>
+            <p class="jw">jadwal</p>
+            <button>Detail</button>
+          </div>
+        </div>
+      </section> -->

@@ -4,3 +4,27 @@
 @theme {
     
 }
+
+@layer components {
+  .doctor-grid {
+    @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  .doctor-card {
+    @apply flex flex-col items-center rounded-xl bg-white p-6 text-center shadow transition hover:shadow-lg;
+  }
+  .doctor-photo {
+    @apply h-32 w-32 rounded-full object-cover;
+  }
+  .doctor-name {
+    @apply mt-4 text-lg font-semibold text-gray-800;
+  }
+  .doctor-specialty {
+    @apply text-sm font-medium text-teal-600;
+  }
+  .doctor-schedule {
+    @apply mt-1 text-sm text-gray-500;
+  }
+  .btn-primary {
+    @apply mt-4 rounded-lg bg-teal-600 px-5 py-2 text-white transition hover:bg-teal-700;
+  }
+}
