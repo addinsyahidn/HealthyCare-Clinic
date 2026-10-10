@@ -6,16 +6,27 @@
 }
 
 @layer components {
+  #doctor {
+    @apply py-16;
+  }
+  #doctor > div {
+    @apply mx-auto max-w-6xl px-4;
+  }
+  #doctor h2 {
+    @apply mb-10 text-center text-3xl font-bold text-gray-800;
+  }
+
   .doctor-grid {
     @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3;
   }
+
   .doctor-card {
     @apply flex flex-col items-center rounded-xl bg-white p-6 text-center shadow transition hover:shadow-lg;
   }
-  .doctor-photo {
+  .doctor-card img {
     @apply h-32 w-32 rounded-full object-cover;
   }
-  .doctor-name {
+  .doctor-card h3 {
     @apply mt-4 text-lg font-semibold text-gray-800;
   }
   .doctor-specialty {
@@ -24,7 +35,7 @@
   .doctor-schedule {
     @apply mt-1 text-sm text-gray-500;
   }
-  .btn-primary {
+  .doctor-card button {
     @apply mt-4 rounded-lg bg-teal-600 px-5 py-2 text-white transition hover:bg-teal-700;
   }
 }
