@@ -1,6 +1,6 @@
 # HealthyCare-Clinic
 
-**Nama Kelompok:** Isi we, bingung aku  
+**Nama Kelompok:** we kirimkan tugasnya ulang, tempat ku chatnya terhapus🙏  
 **Ketua:** Geofrey Melvern-251401059  
 **Anggota:**  
 - Kurnia Hafiz Arrasyid-251401008
