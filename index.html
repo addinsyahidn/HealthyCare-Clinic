@@ -7,9 +7,86 @@
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <header></header>
-    <main>
-      <section id="layanan"></section>
+    <!-- Bagian Kurnia -->
+    <header class="bg-white shadow-md sticky top-0 z-[999]">
+        <nav class="flex justify-between items-center max-w-[1200px] mx-auto padding px-5 py-4">
+            <div class="text-2xl font-bold text-sky-600">HealthyCare <span class="text-green-600">Clinic</span></div>
+            <ul class="flex list-none gap-5">
+                <li><a href="#home" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Beranda</a></li>
+                <li><a href="#layanan" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Layanan</a></li>
+                <li><a href="#doctor" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Dokter</a></li>
+                <li><a href="#janji" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Buat Janji</a></li>
+                <li><a href="#faq" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">FAQ</a></li>
+                <li><a href="#kontak" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="bg-[linear-gradient(rgba(2,132,199,0.8),rgba(2,132,199,0.6))] bg-no-repeat bg-center bg-cover h-[70vh] flex items-center justify-center text-center text-white px-5">
+        <div class="max-w-[700px] mx-auto">
+            <h1 class="text-4xl font-bold mb-4 leading-tight">Solusi Kesehatan Terpercaya untuk Keluarga Anda</h1>
+            <p class="text-lg mb-6 opacity-95">HealthyCare Clinic berkomitmen memberikan pelayanan medis terbaik dengan tenaga profesional, fasilitas modern, dan pelayanan yang ramah.</p>
+            <a href="#janji" class="cta-button inline-block bg-green-600 text-white px-7 py-3 no-underline rounded-full font-bold shadow-[0_4px_15px_rgba(22,163,74,0.4)] hover:bg-green-700 hover:-translate-y-0.5 transition-all duration-300">Buat Janji Temu</a>
+        </div>
+    </section>
+
+    <section id="layanan" class="py-[70px] px-5 max-w-[1200px] mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-900 mb-2.5">Layanan Kami</h2>
+            <p class="text-slate-500 text-base">Klik salah satu layanan untuk langsung memfilter dan menampilkan dokter spesialis yang Anda butuhkan.</p>
+        </div>
+        
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
+            <!-- Layanan 1 -->
+            <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
+                <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-blue-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(2,132,199,0.1)]">&#128066;</div>
+                <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis THT</h3>
+                <p class="text-sm text-slate-500 mb-4">Penanganan gangguan kesehatan pada organ telinga, hidung, tenggorokan, serta struktur kepala dan leher secara profesional.</p>
+                <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="THT">Cari Dokter</a>
+            </div>
+
+            <!-- Layanan 2 -->
+            <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
+                <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-green-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(22,163,74,0.1)]">&#128118;</div>
+                <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Anak</h3>
+                <p class="text-sm text-slate-500 mb-4">Pelayanan imunisasi tumbuh kembang, penanganan infeksi klinis, dan pengobatan medis intensif khusus anak.</p>
+                <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Anak">Cari Dokter</a>
+            </div>
+
+            <!-- Layanan 3 -->
+            <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
+                <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-blue-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(2,132,199,0.1)]">&#129328;</div>
+                <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Kandungan</h3>
+                <p class="text-sm text-slate-500 mb-4">Pemeriksaan masa kehamilan berkala, fasilitas USG kandungan, serta konsultasi kesehatan reproduksi wanita.</p>
+                <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Kandungan">Cari Dokter</a>
+            </div>
+
+            <!-- Layanan 4 -->
+            <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
+                <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-green-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(22,163,74,0.1)]">&#128065;</div>
+                <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Mata</h3>
+                <p class="text-sm text-slate-500 mb-4">Pemeriksaan komprehensif refraksi mata, deteksi gangguan fungsi penglihatan, dan pembuatan resep kacamata medis.</p>
+                <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Mata">Cari Dokter</a>
+            </div>
+
+            <!-- Layanan 5 -->
+            <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
+                <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-blue-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(2,132,199,0.1)]">&#10024;</div>
+                <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Kulit</h3>
+                <p class="text-sm text-slate-500 mb-4">Penanganan berbagai penyakit kulit alergi, infeksi, pengobatan jerawat klinis, serta konsultasi kesehatan estetika.</p>
+                <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Kulit">Cari Dokter</a>
+            </div>
+
+            <!-- Layanan 6 -->
+            <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
+                <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-green-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(22,163,74,0.1)]">&#129485;</div>
+                <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Penyakit Dalam</h3>
+                <p class="text-sm text-slate-500 mb-4">Layanan diagnosis, pengobatan medis, dan konsultasi mendalam untuk berbagai keluhan gangguan fungsi organ dalam tubuh.</p>
+                <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Penyakit Dalam">Cari Dokter</a>
+            </div>
+        </div>
+    </section>
+    <!-- Batas Kurnia -->
 
       <!-- Bagian Addin -->
       <section id="doctor">
