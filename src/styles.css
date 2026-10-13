@@ -2,7 +2,7 @@
 
 /* silahkan isi style custom kelen we */
 @theme {
-    
+
 }
 
 @layer components {
@@ -64,3 +64,170 @@
 
 /* Lingkaran dekoratif di header */
 .m-blob { position: absolute; border-radius: 9999px; animation: melayang 6s ease-in-out infinite; }
+
+/* ===== Form Pendaftaran ===== */
+.pendaftaran-page,
+.pendaftaran-page * {
+  box-sizing: border-box;
+}
+
+.pendaftaran-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pendaftaran-page .container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 460px;
+  padding: 40px 36px;
+}
+
+.pendaftaran-page .form-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.pendaftaran-page .form-header h1 {
+  font-size: 1.6rem;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.pendaftaran-page .form-header p {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.pendaftaran-page .form-group {
+  margin-bottom: 18px;
+}
+
+.pendaftaran-page .form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.pendaftaran-page .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  outline: none;
+  color: #1f2937;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pendaftaran-page .form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.pendaftaran-page .form-group input:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+}
+
+.pendaftaran-page .form-group input.input-error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.pendaftaran-page .error-message {
+  display: block;
+  font-size: 0.82rem;
+  color: #dc2626;
+  margin-top: 6px;
+}
+
+.pendaftaran-page .error-message:empty {
+  display: none;
+}
+
+/* Kolom password + tombol lihat */
+.pendaftaran-page .password-wrap {
+  position: relative;
+}
+
+.pendaftaran-page .password-wrap input {
+  padding-right: 84px;
+}
+
+.pendaftaran-page .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 6px 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0d9488;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.pendaftaran-page .toggle-password:hover {
+  background: #f0fdfa;
+}
+
+.pendaftaran-page .success-message {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #15803d;
+  margin-top: 16px;
+}
+
+.pendaftaran-page .success-message:empty {
+  display: none;
+}
+
+.pendaftaran-page .btn-daftar {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.15s ease;
+}
+
+.pendaftaran-page .btn-daftar:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.pendaftaran-page .btn-daftar:active {
+  transform: translateY(0);
+}
+
+.pendaftaran-page .btn-daftar:focus-visible,
+.pendaftaran-page .toggle-password:focus-visible {
+  outline: 3px solid rgba(13, 148, 136, 0.45);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .pendaftaran-page .container {
+    padding: 28px 20px;
+  }
+  .pendaftaran-page .form-header h1 {
+    font-size: 1.35rem;
+  }
+}
