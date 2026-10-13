@@ -6,5 +6,5 @@
 - Kurnia Hafiz Arrasyid-251401008
 - Muhammad Fadlan Nasution-2514017
 - Addin Syahid Nugraha-251401068
-- Ferdinand Maccalister-251401077
+- Ferdinand Macalister-251401077
 - Owen Liandra-251401095
