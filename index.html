@@ -15,7 +15,7 @@
                 <li><a href="#home" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Beranda</a></li>
                 <li><a href="#layanan" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Layanan</a></li>
                 <li><a href="#doctor" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Dokter</a></li>
-                <li><a href="#janji" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Buat Janji</a></li>
+                <li><a href="/pages/janji.html" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Buat Janji</a></li>
                 <li><a href="#faq" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">FAQ</a></li>
                 <li><a href="#kontak" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Kontak</a></li>
             </ul>
@@ -26,7 +26,7 @@
         <div class="max-w-[700px] mx-auto">
             <h1 class="text-4xl font-bold mb-4 leading-tight">Solusi Kesehatan Terpercaya untuk Keluarga Anda</h1>
             <p class="text-lg mb-6 opacity-95">HealthyCare Clinic berkomitmen memberikan pelayanan medis terbaik dengan tenaga profesional, fasilitas modern, dan pelayanan yang ramah.</p>
-            <a href="#janji" class="cta-button inline-block bg-green-600 text-white px-7 py-3 no-underline rounded-full font-bold shadow-[0_4px_15px_rgba(22,163,74,0.4)] hover:bg-green-700 hover:-translate-y-0.5 transition-all duration-300">Buat Janji Temu</a>
+            <a href="/pages/janji.html" class="cta-button inline-block bg-green-600 text-white px-7 py-3 no-underline rounded-full font-bold shadow-[0_4px_15px_rgba(22,163,74,0.4)] hover:bg-green-700 hover:-translate-y-0.5 transition-all duration-300">Buat Janji Temu</a>
         </div>
     </section>
 
@@ -148,7 +148,87 @@
         </div>
       </section>
       <!-- Batas Addin -->
+       
     </main>
+    <!-- Modal Detail Dokter -->
+<div id="modal-dokter" class="fixed inset-0 z-[1000] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm" aria-hidden="true">
+  <div id="modal-box" class="modal-box relative bg-white w-full max-w-[760px] max-h-[92vh] overflow-y-auto rounded-3xl shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="md-nama">
+
+    <button id="modal-close" type="button" aria-label="Tutup"
+      class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 text-slate-600 text-2xl leading-none shadow hover:bg-red-50 hover:text-red-500 hover:rotate-90 transition-all duration-300">&times;</button>
+
+    <!-- Header -->
+    <div class="relative overflow-hidden bg-gradient-to-br from-sky-600 via-sky-500 to-green-500 text-white px-6 sm:px-8 pt-8 pb-20">
+      <div class="m-blob w-44 h-44 bg-white/10 -top-12 -left-10"></div>
+      <div class="m-blob w-28 h-28 bg-white/10 bottom-2 right-10" style="animation-delay:-2s"></div>
+      <p class="m-up relative text-xs uppercase tracking-widest opacity-90" style="--d:.15s">Profil Dokter</p>
+    </div>
+
+    <div class="px-6 sm:px-8 pb-8 -mt-14 relative">
+      <!-- Foto + nama -->
+      <div class="flex flex-col sm:flex-row sm:items-end gap-4">
+        <img id="md-foto" src="" alt="" class="m-photo w-32 h-32 sm:w-36 sm:h-36 rounded-2xl object-cover border-4 border-white shadow-xl bg-slate-100" />
+        <div class="pb-1">
+          <h3 id="md-nama" class="m-up text-2xl font-bold text-slate-900" style="--d:.3s"></h3>
+          <span id="md-spesialis" class="m-up inline-block mt-1 px-3 py-1 rounded-full bg-green-50 text-green-700 text-sm font-semibold" style="--d:.4s"></span>
+        </div>
+      </div>
+
+      <!-- Statistik -->
+      <div class="m-up grid grid-cols-3 gap-3 mt-6" style="--d:.5s">
+        <div class="bg-sky-50 rounded-2xl p-4 text-center">
+          <p class="text-2xl font-bold text-sky-600"><span id="md-counter">0</span>+</p>
+          <p class="text-xs text-slate-500 mt-0.5">Tahun pengalaman</p>
+        </div>
+        <div class="bg-green-50 rounded-2xl p-4 text-center">
+          <p id="md-jumlah-hari" class="text-2xl font-bold text-green-600">0</p>
+          <p class="text-xs text-slate-500 mt-0.5">Hari praktik / minggu</p>
+        </div>
+        <div class="bg-sky-50 rounded-2xl p-4 text-center">
+          <p id="md-jam" class="text-sm font-bold text-sky-600 leading-tight pt-1.5"></p>
+          <p class="text-xs text-slate-500 mt-1">Jam praktik</p>
+        </div>
+      </div>
+
+      <!-- Pendidikan -->
+      <div class="m-up flex items-start gap-3 mt-5 p-4 rounded-2xl border border-slate-200" style="--d:.6s">
+        <span class="text-2xl">&#127891;</span>
+        <div>
+          <p class="text-xs text-slate-500">Pendidikan</p>
+          <p id="md-pendidikan" class="font-semibold text-slate-800 text-sm"></p>
+        </div>
+      </div>
+
+      <!-- Tentang -->
+      <div class="m-up mt-6" style="--d:.7s">
+        <h4 class="font-semibold text-slate-900 mb-2">Tentang Dokter</h4>
+        <p id="md-tentang" class="text-sm text-slate-600 leading-relaxed"></p>
+      </div>
+
+      <!-- Jadwal -->
+      <div class="m-up mt-6" style="--d:.8s">
+        <h4 class="font-semibold text-slate-900 mb-2">Jadwal Praktik</h4>
+        <div id="md-hari" class="grid grid-cols-7 gap-2 text-center"></div>
+      </div>
+
+      <!-- Bidang penanganan -->
+      <div class="m-up mt-6" style="--d:.9s">
+        <h4 class="font-semibold text-slate-900 mb-2">Bidang Penanganan</h4>
+        <div id="md-chips" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <!-- Aksi -->
+      <div class="m-up mt-8 flex flex-col sm:flex-row gap-3" style="--d:1s">
+        <a id="md-janji" href="/janji.html"
+          class="m-pulse flex-1 text-center bg-green-600 text-white py-3 rounded-full font-bold no-underline hover:bg-green-700 hover:-translate-y-0.5 transition-all duration-300">
+          Buat Janji dengan Dokter Ini
+        </a>
+        <button type="button" id="modal-tutup-2"
+          class="px-6 py-3 rounded-full border border-slate-300 text-slate-600 font-medium hover:bg-slate-50 transition-colors">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
     <footer></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
