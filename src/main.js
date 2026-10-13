@@ -1,3 +1,115 @@
+// ===== Validasi Form Pendaftaran =====
+(function () {
+  const form = document.getElementById("formPendaftaran");
+  const pesanSukses = document.getElementById("pesanSukses");
+  if (!form || !pesanSukses) return; // halaman ini tidak punya form pendaftaran
+
+  const aturan = [
+    {
+      id: "nama",
+      kosong: "Nama lengkap wajib diisi",
+      salah: "Nama minimal 3 karakter",
+      valid: (v) => v.length >= 3,
+    },
+    {
+      id: "email",
+      kosong: "Email wajib diisi",
+      salah: "Format email tidak valid (contoh: nama@email.com)",
+      valid: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+    },
+    {
+      id: "telepon",
+      kosong: "Nomor telepon wajib diisi",
+      salah: "Nomor telepon tidak valid (contoh: 081234567890)",
+      valid: (v) => /^(\+62|62|0)8\d{8,12}$/.test(v.replace(/[\s-]/g, "")),
+    },
+    {
+      id: "password",
+      kosong: "Password wajib diisi",
+      salah: "Password minimal 8 karakter",
+      valid: (v) => v.length >= 8,
+      trim: false, // spasi pada password tidak boleh dipangkas
+    },
+  ];
+
+  const ambil = (r) => document.getElementById(r.id);
+  const ambilError = (r) => document.getElementById("error-" + r.id);
+
+  function tampilkanError(r, pesan) {
+    ambilError(r).textContent = pesan;
+    ambil(r).classList.add("input-error");
+    ambil(r).setAttribute("aria-invalid", "true");
+  }
+
+  function hapusError(r) {
+    ambilError(r).textContent = "";
+    ambil(r).classList.remove("input-error");
+    ambil(r).removeAttribute("aria-invalid");
+  }
+
+  // Mengembalikan true jika valid
+  function periksa(r) {
+    const mentah = ambil(r).value;
+    const nilai = r.trim === false ? mentah : mentah.trim();
+
+    if (nilai === "") {
+      tampilkanError(r, r.kosong);
+      return false;
+    }
+    if (!r.valid(nilai)) {
+      tampilkanError(r, r.salah);
+      return false;
+    }
+    hapusError(r);
+    return true;
+  }
+
+  aturan.forEach((r) => {
+    const input = ambil(r);
+
+    // Hapus error & pesan sukses saat mulai mengetik
+    input.addEventListener("input", () => {
+      hapusError(r);
+      pesanSukses.textContent = "";
+    });
+
+    // Periksa saat pindah kolom, hanya jika sudah ada isinya
+    input.addEventListener("blur", () => {
+      if (input.value.trim() !== "") periksa(r);
+    });
+  });
+
+  // Tombol lihat / sembunyikan password
+  const tombolLihat = document.getElementById("togglePassword");
+  if (tombolLihat) {
+    tombolLihat.addEventListener("click", () => {
+      const input = document.getElementById("password");
+      const tampil = input.type === "password";
+      input.type = tampil ? "text" : "password";
+      tombolLihat.textContent = tampil ? "Sembunyi" : "Lihat";
+      tombolLihat.setAttribute("aria-label", tampil ? "Sembunyikan password" : "Tampilkan password");
+    });
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    let pertamaBermasalah = null;
+    aturan.forEach((r) => {
+      if (!periksa(r) && !pertamaBermasalah) pertamaBermasalah = ambil(r);
+    });
+
+    if (pertamaBermasalah) {
+      pesanSukses.textContent = "";
+      pertamaBermasalah.focus();
+      return;
+    }
+
+    pesanSukses.textContent = "Pendaftaran berhasil.";
+    form.reset();
+  });
+})();
+
 // ===== Data detail dokter =====
 const dokterDetail = {
   "dr. Damar langit": {
