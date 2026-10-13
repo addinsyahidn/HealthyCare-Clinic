@@ -87,8 +87,8 @@
                 </div>
             </div>
         </section>
-        <!-- Batas Kurnia --> 
-
+        <!-- Batas Kurnia -->
+      
         <!-- Bagian Addin & Ferdinand -->
         <section id="doctor">
         <div>
@@ -164,6 +164,58 @@
         </div>
         </section>
         <!-- Batas Addin & Ferdinand -->
+
+            <!-- Bagian Fadlan -->
+      <section id="pendaftaran">
+        <div class="pendaftaran-page">
+          <div class="container">
+            <div class="form-header">
+              <h1>Pendaftaran Pasien Baru</h1>
+              <p>Silakan lengkapi data di bawah ini untuk mendaftar.</p>
+            </div>
+
+            <form id="formPendaftaran" novalidate>
+              <!-- Nama Lengkap -->
+              <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Nama sesuai KTP" autocomplete="name" aria-describedby="error-nama" />
+                <span class="error-message" id="error-nama"></span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="nama@email.com" autocomplete="email" aria-describedby="error-email" />
+                <span class="error-message" id="error-email"></span>
+              </div>
+
+              <!-- Nomor Telepon -->
+              <div class="form-group">
+                <label for="telepon">Nomor Telepon</label>
+                <input type="tel" id="telepon" placeholder="081234567890" autocomplete="tel" aria-describedby="error-telepon" />
+                <span class="error-message" id="error-telepon"></span>
+              </div>
+
+              <!-- Password -->
+              <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-wrap">
+                  <input type="password" id="password" placeholder="Minimal 8 karakter" autocomplete="new-password" aria-describedby="error-password" />
+                  <button type="button" id="togglePassword" class="toggle-password" aria-label="Tampilkan password">Lihat</button>
+                </div>
+                <span class="error-message" id="error-password"></span>
+              </div>
+
+              <!-- Tombol Daftar -->
+              <button type="submit" class="btn-daftar">Daftar</button>
+
+              <!-- Pesan Sukses -->
+              <p id="pesanSukses" class="success-message" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- Batas Fadlan -->
 
         <!-- Bagian Geo -->
         <!-- Bagian Jam Layanan & Kontak -->
