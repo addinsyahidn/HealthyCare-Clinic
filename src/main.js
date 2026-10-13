@@ -131,3 +131,38 @@ modal.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) tutupModal();
 });
+
+
+//Filter dokter berdasarkan spesialisasi
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const doctorCards = document.querySelectorAll(".doctor-card");
+
+// Dua set class Tailwind: tombol terpilih vs tombol biasa
+const kelasAktif = ["bg-sky-600", "text-white", "border-sky-600"];
+const kelasNonaktif = ["bg-white", "text-slate-600", "border-slate-300"];
+
+function filterDokter(spesialis) {
+  // Tampilkan / sembunyikan kartu
+  doctorCards.forEach((card) => {
+    const cocok = spesialis === "Semua" || card.dataset.spesialis === spesialis;
+    card.style.display = cocok ? "" : "none";
+  });
+
+  // Ganti warna tombol
+  filterButtons.forEach((btn) => {
+    const aktif = btn.dataset.filter === spesialis;
+    btn.classList.remove(...(aktif ? kelasNonaktif : kelasAktif));
+    btn.classList.add(...(aktif ? kelasAktif : kelasNonaktif));
+  });
+}
+
+// Klik tombol filter
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => filterDokter(btn.dataset.filter));
+});
+
+// Klik tombol "Cari Dokter" di bagian Layanan
+document.querySelectorAll(".btn-layanan-search").forEach((btn) => {
+  btn.addEventListener("click", () => filterDokter(btn.dataset.target));
+});
