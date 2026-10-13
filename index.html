@@ -88,13 +88,28 @@
     </section>
     <!-- Batas Kurnia --> 
 
-      <!-- Bagian Addin -->
+      <!-- Bagian Addin & Ferdinand -->
       <section id="doctor">
         <div>
           <h2>Dokter Kami</h2>
-          <!-- kalo mau buat filter mungkin disini -->
+          <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <button type="button" data-filter="Semua"
+              class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-sky-600 text-white border-sky-600">Semua</button>
+            <button type="button" data-filter="THT"
+              class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">THT</button>
+            <button type="button" data-filter="Anak"
+              class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Anak</button>
+            <button type="button" data-filter="Kandungan"
+              class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Kandungan</button>
+            <button type="button" data-filter="Mata"
+              class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Mata</button>
+            <button type="button" data-filter="Kulit"
+              class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Kulit</button>
+            <button type="button" data-filter="Penyakit Dalam"
+              class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Penyakit Dalam</button>
+          </div>
           <div class="doctor-grid">
-            <article class="doctor-card">
+            <article class="doctor-card" data-spesialis="THT">
               <img src="/images/dr. Damar langit.jpg" alt="dr. Damar langit" />
               <h3>dr. Damar langit</h3>
               <p class="doctor-specialty">Sp. THT</p>
@@ -102,7 +117,7 @@
               <button type="button">Detail</button>
             </article>
 
-            <article class="doctor-card">
+            <article class="doctor-card" data-spesialis="Anak">
               <img
                 src="/images/dr. Raditya Reynald.jpg"
                 alt="dr. Raditya Reynald"
@@ -113,7 +128,7 @@
               <button type="button">Detail</button>
             </article>
 
-            <article class="doctor-card">
+            <article class="doctor-card" data-spesialis="Kandungan">
               <img src="/images/dr. Nadia Elora.jpg" alt="dr. Nadia Elora" />
               <h3>dr. Nadia Elora</h3>
               <p class="doctor-specialty">Sp. Kandungan</p>
@@ -121,7 +136,7 @@
               <button type="button">Detail</button>
             </article>
 
-            <article class="doctor-card">
+            <article class="doctor-card" data-spesialis="Mata">
               <img src="/images/dr. Kenzo Pramudya.jpg" alt="dr. Kenzo Pramudya" />
               <h3>dr. Kenzo Pramudya</h3>
               <p class="doctor-specialty">Sp. Mata</p>
@@ -129,7 +144,7 @@
               <button type="button">Detail</button>
             </article>
 
-            <article class="doctor-card">
+            <article class="doctor-card" data-spesialis="Kulit">
               <img src="/images/dr. Raya Sudiro.jpg" alt="dr. Raya Sudiro" />
               <h3>dr. Raya Sudiro</h3>
               <p class="doctor-specialty">Sp. Kulit</p>
@@ -137,7 +152,7 @@
               <button type="button">Detail</button>
             </article>
 
-            <article class="doctor-card">
+            <article class="doctor-card" data-spesialis="Penyakit Dalam">
               <img src="/images/dr. Kiara Shafira.jpg" alt="dr. Kiara Shafira" />
               <h3>dr. Kiara Shafira</h3>
               <p class="doctor-specialty">Sp. Penyakit Dalam</p>
@@ -147,7 +162,7 @@
           </div>
         </div>
       </section>
-      <!-- Batas Addin -->
+      <!-- Batas Addin & Ferdinand -->
        
     </main>
     <!-- Modal Detail Dokter -->
