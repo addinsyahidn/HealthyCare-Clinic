@@ -1,3 +1,25 @@
+   // Hamburger button menu 
+   (function () {
+     const toggle = document.getElementById("nav-toggle");
+     const menu = document.getElementById("nav-menu");
+     if (!toggle || !menu) return;
+
+     function setMenu(buka) {
+       menu.classList.toggle("open", buka);
+       toggle.setAttribute("aria-expanded", String(buka));
+       toggle.setAttribute("aria-label", buka ? "Tutup menu" : "Buka menu");
+     }
+
+     toggle.addEventListener("click", () => {
+       setMenu(!menu.classList.contains("open"));
+     });
+
+     // Tutup menu otomatis setelah salah satu link diklik
+     menu.querySelectorAll("a").forEach((a) => {
+       a.addEventListener("click", () => setMenu(false));
+     });
+   })();
+
 // ===== Validasi Form Pendaftaran =====
 (function () {
   const form = document.getElementById("formPendaftaran");

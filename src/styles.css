@@ -12,7 +12,7 @@
     @apply bg-white shadow-md sticky top-0 z-[999];
   }
   .site-nav {
-    @apply flex justify-between items-center max-w-[1200px] mx-auto px-5 py-4;
+    @apply flex flex-wrap justify-between items-center max-w-[1200px] mx-auto px-5 py-4;
   }
   .brand {
     @apply text-2xl font-bold text-sky-600;
@@ -20,23 +20,46 @@
   .brand span {
     @apply text-green-600;
   }
+
+  /* Tombol hamburger (hanya muncul di bawah breakpoint md) */
+  .nav-toggle {
+    @apply flex flex-col justify-center gap-1.5 w-10 h-10 p-2 rounded-md cursor-pointer md:hidden;
+  }
+  .nav-toggle span {
+    @apply block h-0.5 w-full bg-slate-700 rounded transition-all duration-300;
+  }
+  /* Berubah jadi ikon X saat menu terbuka */
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    @apply translate-y-2 rotate-45;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    @apply opacity-0;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    @apply -translate-y-2 -rotate-45;
+  }
+
+  /* Menu: tersembunyi di HP, tampil horizontal di desktop */
   .nav-menu {
-    @apply flex list-none gap-5;
+    @apply hidden w-full flex-col list-none gap-1 pt-3 md:flex md:w-auto md:flex-row md:gap-5 md:pt-0;
+  }
+  .nav-menu.open {
+    @apply flex;
   }
   .nav-menu a {
-    @apply text-slate-600 font-medium no-underline transition-colors duration-300 hover:text-sky-600;
+    @apply block py-2 md:py-0 text-slate-600 font-medium no-underline transition-colors duration-300 hover:text-sky-600;
   }
 
   /* Hero */
   .hero {
-    @apply bg-no-repeat bg-center bg-cover h-[70vh] flex items-center justify-center text-center text-white px-5;
+    @apply bg-no-repeat bg-center bg-cover min-h-[70vh] py-12 flex items-center justify-center text-center text-white px-5;
     background-image: linear-gradient(rgba(2, 132, 199, 0.8), rgba(2, 132, 199, 0.6));
   }
   .hero-content {
     @apply max-w-[700px] mx-auto;
   }
   .hero h1 {
-    @apply text-4xl font-bold mb-4 leading-tight;
+    @apply text-3xl md:text-4xl font-bold mb-4 leading-tight;
   }
   .hero p {
     @apply text-lg mb-6 opacity-95;
@@ -249,7 +272,7 @@
 @layer components {
   .contact-grid {
     @apply grid gap-6;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
   .info-card {
     @apply bg-white rounded-xl border border-slate-200 transition-all duration-300 hover:shadow-lg hover:border-sky-600;
