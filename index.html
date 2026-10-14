@@ -8,106 +8,119 @@
   </head>
   <body>
     <!-- Bagian Kurnia -->
-    <header class="bg-white shadow-md sticky top-0 z-[999]">
-        <nav class="flex justify-between items-center max-w-[1200px] mx-auto padding px-5 py-4">
-            <div class="text-2xl font-bold text-sky-600">HealthyCare <span class="text-green-600">Clinic</span></div>
-            <ul class="flex list-none gap-5">
-                <li><a href="#home" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Beranda</a></li>
-                <li><a href="#layanan" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Layanan</a></li>
-                <li><a href="#doctor" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Dokter</a></li>
-                <li><a href="/pages/janji.html" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Buat Janji</a></li>
-                <li><a href="#faq" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">FAQ</a></li>
-                <li><a href="#kontak" class="text-slate-600 font-medium no-underline hover:text-sky-600 transition-colors duration-300">Kontak</a></li>
+    <header class="site-header">
+        <nav class="site-nav">
+            <div class="brand">HealthyCare <span>Clinic</span></div>
+            <ul class="nav-menu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#doctor">Dokter</a></li>
+                <li><a href="/pages/janji.html">Buat Janji</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="bg-[linear-gradient(rgba(2,132,199,0.8),rgba(2,132,199,0.6))] bg-no-repeat bg-center bg-cover h-[70vh] flex items-center justify-center text-center text-white px-5">
-            <div class="max-w-[700px] mx-auto">
-                <h1 class="text-4xl font-bold mb-4 leading-tight">Solusi Kesehatan Terpercaya untuk Keluarga Anda</h1>
-                <p class="text-lg mb-6 opacity-95">HealthyCare Clinic berkomitmen memberikan pelayanan medis terbaik dengan tenaga profesional, fasilitas modern, dan pelayanan yang ramah.</p>
-                <a href="/pages/janji.html" class="cta-button inline-block bg-green-600 text-white px-7 py-3 no-underline rounded-full font-bold shadow-[0_4px_15px_rgba(22,163,74,0.4)] hover:bg-green-700 hover:-translate-y-0.5 transition-all duration-300">Buat Janji Temu</a>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Solusi Kesehatan Terpercaya untuk Keluarga Anda</h1>
+                <p>HealthyCare Clinic berkomitmen memberikan pelayanan medis terbaik dengan tenaga profesional, fasilitas modern, dan pelayanan yang ramah.</p>
+                <a href="/pages/janji.html" class="cta-button">Buat Janji Temu</a>
             </div>
         </section>
 
-        <section id="layanan" class="py-[70px] px-5 max-w-[1200px] mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-900 mb-2.5">Layanan Kami</h2>
-                <p class="text-slate-500 text-base">Klik salah satu layanan untuk langsung memfilter dan menampilkan dokter spesialis yang Anda butuhkan.</p>
+        <section id="layanan" class="layanan-section">
+            <div class="section-header">
+                <h2>Layanan Kami</h2>
+                <p>Klik salah satu layanan untuk langsung memfilter dan menampilkan dokter spesialis yang Anda butuhkan.</p>
             </div>
-            
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
+
+            <div class="service-grid">
                 <!-- Layanan 1 -->
-                <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
-                    <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-blue-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(2,132,199,0.1)]">&#128066;</div>
-                    <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis THT</h3>
-                    <p class="text-sm text-slate-500 mb-4">Penanganan gangguan kesehatan pada organ telinga, hidung, tenggorokan, serta struktur kepala dan leher secara profesional.</p>
-                    <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="THT">Cari Dokter</a>
+                <div class="service-card">
+                    <div class="service-icon service-icon--sky">
+                        <img src="public/images/Spesialis THT.png" alt="Logo THT">
+                    </div>
+                    <h3>Spesialis THT</h3>
+                    <p>Penanganan gangguan kesehatan pada organ telinga, hidung, tenggorokan, serta struktur kepala dan leher secara profesional.</p>
+                    <a href="#doctor" class="btn-layanan-search" data-target="THT">Cari Dokter</a>
                 </div>
 
                 <!-- Layanan 2 -->
-                <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
-                    <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-green-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(22,163,74,0.1)]">&#128118;</div>
-                    <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Anak</h3>
-                    <p class="text-sm text-slate-500 mb-4">Pelayanan imunisasi tumbuh kembang, penanganan infeksi klinis, dan pengobatan medis intensif khusus anak.</p>
-                    <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Anak">Cari Dokter</a>
+                <div class="service-card">
+                    <div class="service-icon service-icon--green">
+                        <img src="public/images/Spesialis Anak.png" alt="Logo Anak">
+                    </div>
+                    <h3>Spesialis Anak</h3>
+                    <p>Pelayanan imunisasi tumbuh kembang, penanganan infeksi klinis, dan pengobatan medis intensif khusus anak.</p>
+                    <a href="#doctor" class="btn-layanan-search" data-target="Anak">Cari Dokter</a>
                 </div>
 
                 <!-- Layanan 3 -->
-                <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
-                    <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-blue-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(2,132,199,0.1)]">&#129328;</div>
-                    <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Kandungan</h3>
-                    <p class="text-sm text-slate-500 mb-4">Pemeriksaan masa kehamilan berkala, fasilitas USG kandungan, serta konsultasi kesehatan reproduksi wanita.</p>
-                    <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Kandungan">Cari Dokter</a>
+                <div class="service-card">
+                    <div class="service-icon service-icon--sky">
+                        <img src="public/images/Spesialis Kandungan.png" alt="Logo Kandungan">
+                    </div>
+                    <h3>Spesialis Kandungan</h3>
+                    <p>Pemeriksaan masa kehamilan berkala, fasilitas USG kandungan, serta konsultasi kesehatan reproduksi wanita.</p>
+                    <a href="#doctor" class="btn-layanan-search" data-target="Kandungan">Cari Dokter</a>
                 </div>
 
                 <!-- Layanan 4 -->
-                <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
-                    <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-green-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(22,163,74,0.1)]">&#128065;</div>
-                    <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Mata</h3>
-                    <p class="text-sm text-slate-500 mb-4">Pemeriksaan komprehensif refraksi mata, deteksi gangguan fungsi penglihatan, dan pembuatan resep kacamata medis.</p>
-                    <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Mata">Cari Dokter</a>
+                <div class="service-card">
+                    <div class="service-icon service-icon--green">
+                        <img src="public/images/Spesialis Mata.png" alt="Logo Mata">
+                    </div>
+                    <h3>Spesialis Mata</h3>
+                    <p>Pemeriksaan komprehensif refraksi mata, deteksi gangguan fungsi penglihatan, dan pembuatan resep kacamata medis.</p>
+                    <a href="#doctor" class="btn-layanan-search" data-target="Mata">Cari Dokter</a>
                 </div>
 
                 <!-- Layanan 5 -->
-                <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
-                    <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-blue-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(2,132,199,0.1)]">&#10024;</div>
-                    <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Kulit</h3>
-                    <p class="text-sm text-slate-500 mb-4">Penanganan berbagai penyakit kulit alergi, infeksi, pengobatan jerawat klinis, serta konsultasi kesehatan estetika.</p>
-                    <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Kulit">Cari Dokter</a>
+                <div class="service-card">
+                    <div class="service-icon service-icon--sky">
+                        <img src="public/images/Spesialis Kulit.png" alt="Logo Kulit">
+                    </div>
+                    <h3>Spesialis Kulit</h3>
+                    <p>Penanganan berbagai penyakit kulit alergi, infeksi, pengobatan jerawat klinis, serta konsultasi kesehatan estetika.</p>
+                    <a href="#doctor" class="btn-layanan-search" data-target="Kulit">Cari Dokter</a>
                 </div>
 
                 <!-- Layanan 6 -->
-                <div class="service-card bg-white p-[30px_20px] rounded-xl text-center border border-slate-200 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
-                    <div class="service-icon text-4xl w-[70px] height h-[70px] leading-[70px] bg-green-50 rounded-full mx-auto mb-4 shadow-[0_4px_10px_rgba(22,163,74,0.1)]">&#129485;</div>
-                    <h3 class="mb-2.5 font-semibold text-xl text-slate-800">Spesialis Penyakit Dalam</h3>
-                    <p class="text-sm text-slate-500 mb-4">Layanan diagnosis, pengobatan medis, dan konsultasi mendalam untuk berbagai keluhan gangguan fungsi organ dalam tubuh.</p>
-                    <a href="#doctor" class="btn-layanan-search inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md hover:bg-sky-700 transition-colors duration-300" data-target="Penyakit Dalam">Cari Dokter</a>
+                <div class="service-card">
+                    <div class="service-icon service-icon--green">
+                        <img src="public/images/Spesialis Penyakit Dalam.png" alt="Logo Penyakit Dalam">
+                    </div>
+                    <h3>Spesialis Penyakit Dalam</h3>
+                    <p>Layanan diagnosis, pengobatan medis, dan konsultasi mendalam untuk berbagai keluhan gangguan fungsi organ dalam tubuh.</p>
+                    <a href="#doctor" class="btn-layanan-search" data-target="Penyakit Dalam">Cari Dokter</a>
                 </div>
             </div>
+      
         </section>
         <!-- Batas Kurnia -->
-      
+
         <!-- Bagian Addin & Ferdinand -->
         <section id="doctor">
         <div>
             <h2>Dokter Kami</h2>
-            <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <div class="filter-bar">
                 <button type="button" data-filter="Semua"
-                    class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-sky-600 text-white border-sky-600">Semua</button>
+                    class="filter-btn bg-sky-600 text-white border-sky-600">Semua</button>
                 <button type="button" data-filter="THT"
-                    class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">THT</button>
+                    class="filter-btn">THT</button>
                 <button type="button" data-filter="Anak"
-                    class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Anak</button>
+                    class="filter-btn">Anak</button>
                 <button type="button" data-filter="Kandungan"
-                    class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Kandungan</button>
+                    class="filter-btn">Kandungan</button>
                 <button type="button" data-filter="Mata"
-                    class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Mata</button>
+                    class="filter-btn">Mata</button>
                 <button type="button" data-filter="Kulit"
-                    class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Kulit</button>
+                    class="filter-btn">Kulit</button>
                 <button type="button" data-filter="Penyakit Dalam"
-                    class="filter-btn px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300">Penyakit Dalam</button>
+                    class="filter-btn">Penyakit Dalam</button>
             </div>
             <div class="doctor-grid">
             <article class="doctor-card" data-spesialis="THT">
@@ -219,119 +232,119 @@
 
         <!-- Bagian Geo -->
         <!-- Bagian Jam Layanan & Kontak -->
-        <section id="kontak" class="py-[70px] px-5 max-w-[1200px] mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-900 mb-2.5">Jam Layanan &amp; Kontak</h2>
-                <p class="text-slate-500 text-base">Kunjungi kami atau hubungi tim HealthyCare Clinic kapan saja selama jam layanan.</p>
+        <section id="kontak" class="kontak-section">
+            <div class="section-header">
+                <h2>Jam Layanan &amp; Kontak</h2>
+                <p>Kunjungi kami atau hubungi tim HealthyCare Clinic kapan saja selama jam layanan.</p>
             </div>
 
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+            <div class="contact-grid">
                 <!-- Jam Layanan -->
-                <div class="bg-white p-[30px_25px] rounded-xl border border-slate-200 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
-                    <div class="text-4xl w-[70px] h-[70px] leading-[70px] text-center bg-blue-50 rounded-full mb-4">&#128339;</div>
-                    <h3 class="font-semibold text-xl text-slate-800 mb-4">Jam Layanan</h3>
-                    <ul class="list-none text-sm text-slate-600">
-                        <li class="flex justify-between py-2 border-b border-slate-100">
+                <div class="info-card">
+                    <div class="info-icon info-icon--sky">&#128339;</div>
+                    <h3>Jam Layanan</h3>
+                    <ul class="hours-list">
+                        <li>
                             <span>Senin - Jumat</span>
-                            <span class="font-medium text-slate-800">08.00 - 17.00</span>
+                            <span class="hours-value">08.00 - 17.00</span>
                         </li>
-                        <li class="flex justify-between py-2 border-b border-slate-100">
+                        <li>
                             <span>Sabtu</span>
-                            <span class="font-medium text-slate-800">08.00 - 17.00</span>
+                            <span class="hours-value">08.00 - 17.00</span>
                         </li>
-                        <li class="flex justify-between py-2">
+                        <li>
                             <span>Minggu &amp; Hari Libur</span>
-                            <span class="font-medium text-red-500">Tutup</span>
+                            <span class="hours-closed">Tutup</span>
                         </li>
                     </ul>
-                    <p class="text-xs text-slate-500 mt-4">Jadwal praktik tiap dokter dapat berbeda, lihat bagian Dokter Kami.</p>
+                    <p class="hours-note">Jadwal praktik tiap dokter dapat berbeda, lihat bagian Dokter Kami.</p>
                 </div>
 
                 <!-- Kontak -->
-                <div class="bg-white p-[30px_25px] rounded-xl border border-slate-200 hover:shadow-lg hover:border-sky-600 transition-all duration-300">
-                    <div class="text-4xl w-[70px] h-[70px] leading-[70px] text-center bg-green-50 rounded-full mb-4">&#128222;</div>
-                    <h3 class="font-semibold text-xl text-slate-800 mb-4">Hubungi Kami</h3>
-                    <ul class="list-none text-sm text-slate-600 flex flex-col gap-3">
+                <div class="info-card">
+                    <div class="info-icon info-icon--green">&#128222;</div>
+                    <h3>Hubungi Kami</h3>
+                    <ul class="contact-list">
                         <li>
-                            <span class="block font-medium text-slate-800">Alamat</span>
+                            <span class="contact-label">Alamat</span>
                             Jl. Kesehatan No. 123, Kota Anda, 12345
                         </li>
                         <li>
-                            <span class="block font-medium text-slate-800">Telepon</span>
-                            <a href="tel:+6281234567890" class="text-sky-600 no-underline hover:underline">+62 812-3456-7890</a>
+                            <span class="contact-label">Telepon</span>
+                            <a href="tel:+6281234567890">+62 812-3456-7890</a>
                         </li>
                         <li>
-                            <span class="block font-medium text-slate-800">WhatsApp</span>
-                            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="text-sky-600 no-underline hover:underline">Chat via WhatsApp</a>
+                            <span class="contact-label">WhatsApp</span>
+                            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">Chat via WhatsApp</a>
                         </li>
                         <li>
-                            <span class="block font-medium text-slate-800">Email</span>
-                            <a href="mailto:info@healthycare.id" class="text-sky-600 no-underline hover:underline">info@healthycare.id</a>
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:info@healthycare.id">info@healthycare.id</a>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Darurat -->
-                <div class="bg-sky-600 text-white p-[30px_25px] rounded-xl flex flex-col justify-center text-center">
-                    <div class="text-4xl mb-3">&#128657;</div>
-                    <h3 class="font-semibold text-xl mb-2">Ingin membuat janji temu?</h3>
-                    <p class="text-sm opacity-95 mb-5">Konsultasikan keluhan Anda kepada dokter terbaik kami agar mendapat penanganan yang tepat dan cepat.</p>
-                    <a href="/pages/janji.html" class="inline-block bg-green-600 text-white px-6 py-2.5 no-underline rounded-full font-bold hover:bg-green-700 hover:-translate-y-0.5 transition-all duration-300">Buat Janji Temu</a>
+                <div class="cta-card">
+                    <div class="cta-card-icon">&#128657;</div>
+                    <h3>Ingin membuat janji temu?</h3>
+                    <p>Konsultasikan keluhan Anda kepada dokter terbaik kami agar mendapat penanganan yang tepat dan cepat.</p>
+                    <a href="/pages/janji.html" class="cta-card-button">Buat Janji Temu</a>
                 </div>
             </div>
         </section>
         <!-- Batas Jam Layanan & Kontak -->
 
-        <section id="faq" class="py-[70px] px-5 max-w-[800px] mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-900 mb-2.5">Pertanyaan yang Sering Diajukan</h2>
-                <p class="text-slate-500 text-base">Temukan jawaban atas pertanyaan umum seputar layanan HealthyCare Clinic.</p>
+        <section id="faq" class="faq-section">
+            <div class="section-header">
+                <h2>Pertanyaan yang Sering Diajukan</h2>
+                <p>Temukan jawaban atas pertanyaan umum seputar layanan HealthyCare Clinic.</p>
             </div>
 
-            <div class="flex flex-col gap-3">
+            <div class="faq-list">
                 <!-- FAQ 1 -->
-                <details name="faq" class="faq-item group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-sky-600 transition-colors duration-300">
-                    <summary class="flex justify-between items-center cursor-pointer list-none px-5 py-4 font-semibold text-slate-800">
+                <details name="faq" class="faq-item">
+                    <summary>
                         Bagaimana cara membuat janji temu dengan dokter?
-                        <span class="text-sky-600 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                        <span class="faq-icon">+</span>
                     </summary>
-                    <p class="px-5 pb-4 text-slate-500 text-sm leading-relaxed">Isi formulir pada bagian "Buat Janji" dengan nama, dokter yang dituju, tanggal, nomor telepon, dan keluhan Anda. Setelah data lengkap, pendaftaran akan langsung tercatat.</p>
+                    <p>Isi formulir pada bagian "Buat Janji" dengan nama, dokter yang dituju, tanggal, nomor telepon, dan keluhan Anda. Setelah data lengkap, pendaftaran akan langsung tercatat.</p>
                 </details>
 
                 <!-- FAQ 2 -->
-                <details name="faq" class="faq-item group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-sky-600 transition-colors duration-300">
-                    <summary class="flex justify-between items-center cursor-pointer list-none px-5 py-4 font-semibold text-slate-800">
+                <details name="faq" class="faq-item">
+                    <summary>
                         Apa saja jam operasional klinik?
-                        <span class="text-sky-600 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                        <span class="faq-icon">+</span>
                     </summary>
-                    <p class="px-5 pb-4 text-slate-500 text-sm leading-relaxed">Klinik buka Senin sampai Sabtu, pukul 08.00 - 17.00. Jadwal praktik tiap dokter berbeda, silakan cek di bagian "Dokter Kami".</p>
+                    <p>Klinik buka Senin sampai Sabtu, pukul 08.00 - 17.00. Jadwal praktik tiap dokter berbeda, silakan cek di bagian "Dokter Kami".</p>
                 </details>
 
                 <!-- FAQ 3 -->
-                <details name="faq" class="faq-item group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-sky-600 transition-colors duration-300">
-                    <summary class="flex justify-between items-center cursor-pointer list-none px-5 py-4 font-semibold text-slate-800">
+                <details name="faq" class="faq-item">
+                    <summary>
                         Apakah saya bisa konsultasi tanpa janji terlebih dahulu?
-                        <span class="text-sky-600 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                        <span class="faq-icon">+</span>
                     </summary>
-                    <p class="px-5 pb-4 text-slate-500 text-sm leading-relaxed">Bisa, namun pasien dengan janji temu akan diprioritaskan. Kami menyarankan membuat janji agar tidak menunggu terlalu lama.</p>
+                    <p>Bisa, namun pasien dengan janji temu akan diprioritaskan. Kami menyarankan membuat janji agar tidak menunggu terlalu lama.</p>
                 </details>
 
                 <!-- FAQ 4 -->
-                <details name="faq" class="faq-item group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-sky-600 transition-colors duration-300">
-                    <summary class="flex justify-between items-center cursor-pointer list-none px-5 py-4 font-semibold text-slate-800">
+                <details name="faq" class="faq-item">
+                    <summary>
                         Apakah klinik menerima pasien BPJS atau asuransi?
-                        <span class="text-sky-600 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                        <span class="faq-icon">+</span>
                     </summary>
-                    <p class="px-5 pb-4 text-slate-500 text-sm leading-relaxed">Silakan hubungi bagian kontak kami untuk informasi terbaru mengenai BPJS dan asuransi swasta yang bekerja sama dengan klinik.</p>
+                    <p>Silakan hubungi bagian kontak kami untuk informasi terbaru mengenai BPJS dan asuransi swasta yang bekerja sama dengan klinik.</p>
                 </details>
 
                 <!-- FAQ 5 -->
-                <details name="faq" class="faq-item group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-sky-600 transition-colors duration-300">
-                    <summary class="flex justify-between items-center cursor-pointer list-none px-5 py-4 font-semibold text-slate-800">
+                <details name="faq" class="faq-item">
+                    <summary>
                         Apa yang harus saya bawa saat datang ke klinik?
-                        <span class="text-sky-600 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                        <span class="faq-icon">+</span>
                     </summary>
-                    <p class="px-5 pb-4 text-slate-500 text-sm leading-relaxed">Bawa kartu identitas, kartu BPJS/asuransi (jika ada), serta hasil pemeriksaan atau resep sebelumnya yang berkaitan dengan keluhan Anda.</p>
+                    <p>Bawa kartu identitas, kartu BPJS/asuransi (jika ada), serta hasil pemeriksaan atau resep sebelumnya yang berkaitan dengan keluhan Anda.</p>
                 </details>
             </div>
         </section>
@@ -339,80 +352,80 @@
     </main>
 
     <!-- Modal Detail Dokter -->
-    <div id="modal-dokter" class="fixed inset-0 z-[1000] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm" aria-hidden="true">
-        <div id="modal-box" class="modal-box relative bg-white w-full max-w-[760px] max-h-[92vh] overflow-y-auto rounded-3xl shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="md-nama">
+    <div id="modal-dokter" class="hidden" aria-hidden="true">
+        <div id="modal-box" class="modal-box" role="dialog" aria-modal="true" aria-labelledby="md-nama">
 
             <button id="modal-close" type="button" aria-label="Tutup"
-            class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 text-slate-600 text-2xl leading-none shadow hover:bg-red-50 hover:text-red-500 hover:rotate-90 transition-all duration-300">&times;</button>
+            class="modal-close">&times;</button>
 
             <!-- Header -->
-            <div class="relative overflow-hidden bg-gradient-to-br from-sky-600 via-sky-500 to-green-500 text-white px-6 sm:px-8 pt-8 pb-20">
-                <div class="m-blob w-44 h-44 bg-white/10 -top-12 -left-10"></div>
-                <div class="m-blob w-28 h-28 bg-white/10 bottom-2 right-10" style="animation-delay:-2s"></div>
-                    <p class="m-up relative text-xs uppercase tracking-widest opacity-90" style="--d:.15s">Profil Dokter</p>
+            <div class="modal-header">
+                <div class="m-blob m-blob--a"></div>
+                <div class="m-blob m-blob--b" style="animation-delay:-2s"></div>
+                    <p class="m-up modal-eyebrow" style="--d:.15s">Profil Dokter</p>
             </div>
 
-            <div class="px-6 sm:px-8 pb-8 -mt-14 relative">
+            <div class="modal-body">
                 <!-- Foto + nama -->
-                <div class="flex flex-col sm:flex-row sm:items-end gap-4">
-                    <img id="md-foto" src="" alt="" class="m-photo w-32 h-32 sm:w-36 sm:h-36 rounded-2xl object-cover border-4 border-white shadow-xl bg-slate-100" />
-                    <div class="pb-1">
-                    <h3 id="md-nama" class="m-up text-2xl font-bold text-slate-900" style="--d:.3s"></h3>
-                    <span id="md-spesialis" class="m-up inline-block mt-1 px-3 py-1 rounded-full bg-green-50 text-green-700 text-sm font-semibold" style="--d:.4s"></span>
+                <div class="modal-profile">
+                    <img id="md-foto" src="" alt="" class="m-photo modal-photo" />
+                    <div class="modal-name-wrap">
+                    <h3 id="md-nama" class="m-up modal-name" style="--d:.3s"></h3>
+                    <span id="md-spesialis" class="m-up modal-badge" style="--d:.4s"></span>
                     </div>
                 </div>
 
                 <!-- Statistik -->
-                <div class="m-up grid grid-cols-3 gap-3 mt-6" style="--d:.5s">
-                    <div class="bg-sky-50 rounded-2xl p-4 text-center">
-                    <p class="text-2xl font-bold text-sky-600"><span id="md-counter">0</span>+</p>
-                    <p class="text-xs text-slate-500 mt-0.5">Tahun pengalaman</p>
+                <div class="m-up modal-stats" style="--d:.5s">
+                    <div class="stat-card">
+                    <p class="stat-value"><span id="md-counter">0</span>+</p>
+                    <p class="stat-label">Tahun pengalaman</p>
                     </div>
-                    <div class="bg-green-50 rounded-2xl p-4 text-center">
-                    <p id="md-jumlah-hari" class="text-2xl font-bold text-green-600">0</p>
-                    <p class="text-xs text-slate-500 mt-0.5">Hari praktik / minggu</p>
+                    <div class="stat-card stat-card--green">
+                    <p id="md-jumlah-hari" class="stat-value">0</p>
+                    <p class="stat-label">Hari praktik / minggu</p>
                     </div>
-                    <div class="bg-sky-50 rounded-2xl p-4 text-center">
-                    <p id="md-jam" class="text-sm font-bold text-sky-600 leading-tight pt-1.5"></p>
-                    <p class="text-xs text-slate-500 mt-1">Jam praktik</p>
+                    <div class="stat-card stat-card--time">
+                    <p id="md-jam" class="stat-value stat-value--small"></p>
+                    <p class="stat-label">Jam praktik</p>
                     </div>
                 </div>
 
                 <!-- Pendidikan -->
-                <div class="m-up flex items-start gap-3 mt-5 p-4 rounded-2xl border border-slate-200" style="--d:.6s">
-                    <span class="text-2xl">&#127891;</span>
+                <div class="m-up modal-education" style="--d:.6s">
+                    <span class="modal-education-icon">&#127891;</span>
                     <div>
-                    <p class="text-xs text-slate-500">Pendidikan</p>
-                    <p id="md-pendidikan" class="font-semibold text-slate-800 text-sm"></p>
+                    <p class="modal-label">Pendidikan</p>
+                    <p id="md-pendidikan" class="modal-education-value"></p>
                     </div>
                 </div>
 
                 <!-- Tentang -->
-                <div class="m-up mt-6" style="--d:.7s">
-                    <h4 class="font-semibold text-slate-900 mb-2">Tentang Dokter</h4>
-                    <p id="md-tentang" class="text-sm text-slate-600 leading-relaxed"></p>
+                <div class="m-up modal-section" style="--d:.7s">
+                    <h4>Tentang Dokter</h4>
+                    <p id="md-tentang" class="modal-about"></p>
                 </div>
 
                 <!-- Jadwal -->
-                <div class="m-up mt-6" style="--d:.8s">
-                    <h4 class="font-semibold text-slate-900 mb-2">Jadwal Praktik</h4>
-                    <div id="md-hari" class="grid grid-cols-7 gap-2 text-center"></div>
+                <div class="m-up modal-section" style="--d:.8s">
+                    <h4>Jadwal Praktik</h4>
+                    <div id="md-hari" class="modal-days"></div>
                 </div>
 
                 <!-- Bidang penanganan -->
-                <div class="m-up mt-6" style="--d:.9s">
-                    <h4 class="font-semibold text-slate-900 mb-2">Bidang Penanganan</h4>
-                    <div id="md-chips" class="flex flex-wrap gap-2"></div>
+                <div class="m-up modal-section" style="--d:.9s">
+                    <h4>Bidang Penanganan</h4>
+                    <div id="md-chips" class="modal-chips"></div>
                 </div>
 
                 <!-- Aksi -->
-                <div class="m-up mt-8 flex flex-col sm:flex-row gap-3" style="--d:1s">
+                <div class="m-up modal-actions" style="--d:1s">
                     <a id="md-janji" href="/janji.html"
-                    class="m-pulse flex-1 text-center bg-green-600 text-white py-3 rounded-full font-bold no-underline hover:bg-green-700 hover:-translate-y-0.5 transition-all duration-300">
+                    class="m-pulse modal-cta">
                     Buat Janji dengan Dokter Ini
                     </a>
                     <button type="button" id="modal-tutup-2"
-                    class="px-6 py-3 rounded-full border border-slate-300 text-slate-600 font-medium hover:bg-slate-50 transition-colors">Tutup</button>
+                    class="modal-cancel">Tutup</button>
                 </div>
             </div>
         </div>

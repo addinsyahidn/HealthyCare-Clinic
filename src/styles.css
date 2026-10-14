@@ -5,6 +5,95 @@
 
 }
 
+/* ===== Bagian Kurnia: Header, Hero, Layanan ===== */
+@layer components {
+  /* Header & navigasi */
+  .site-header {
+    @apply bg-white shadow-md sticky top-0 z-[999];
+  }
+  .site-nav {
+    @apply flex justify-between items-center max-w-[1200px] mx-auto px-5 py-4;
+  }
+  .brand {
+    @apply text-2xl font-bold text-sky-600;
+  }
+  .brand span {
+    @apply text-green-600;
+  }
+  .nav-menu {
+    @apply flex list-none gap-5;
+  }
+  .nav-menu a {
+    @apply text-slate-600 font-medium no-underline transition-colors duration-300 hover:text-sky-600;
+  }
+
+  /* Hero */
+  .hero {
+    @apply bg-no-repeat bg-center bg-cover h-[70vh] flex items-center justify-center text-center text-white px-5;
+    background-image: linear-gradient(rgba(2, 132, 199, 0.8), rgba(2, 132, 199, 0.6));
+  }
+  .hero-content {
+    @apply max-w-[700px] mx-auto;
+  }
+  .hero h1 {
+    @apply text-4xl font-bold mb-4 leading-tight;
+  }
+  .hero p {
+    @apply text-lg mb-6 opacity-95;
+  }
+  .cta-button {
+    @apply inline-block bg-green-600 text-white px-7 py-3 no-underline rounded-full font-bold transition-all duration-300 hover:bg-green-700 hover:-translate-y-0.5;
+    box-shadow: 0 4px 15px rgba(22, 163, 74, 0.4);
+  }
+
+  /* Layanan */
+  .layanan-section,
+  .kontak-section {
+    @apply py-[70px] px-5 max-w-[1200px] mx-auto;
+  }
+  .section-header {
+    @apply text-center mb-10;
+  }
+  .section-header h2 {
+    @apply text-3xl font-bold text-slate-900 mb-2.5;
+  }
+  .section-header p {
+    @apply text-slate-500 text-base;
+  }
+  .service-grid {
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .service-card {
+    @apply bg-white rounded-xl text-center border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-sky-600;
+    padding: 30px 20px;
+  }
+  .service-icon {
+    @apply w-[70px] h-[70px] rounded-full mx-auto mb-4;
+  }
+  .service-icon--sky {
+    @apply bg-blue-50;
+    box-shadow: 0 4px 10px rgba(2, 132, 199, 0.1);
+  }
+  .service-icon--green {
+    @apply bg-green-50;
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.1);
+  }
+  .service-icon img {
+    @apply w-full h-full object-cover p-3;
+  }
+  .service-card h3 {
+    @apply mb-2.5 font-semibold text-xl text-slate-800;
+  }
+  .service-card p {
+    @apply text-sm text-slate-500 mb-4;
+  }
+  .btn-layanan-search {
+    @apply inline-block px-4 py-2 bg-sky-600 text-white no-underline text-sm font-medium rounded-md transition-colors duration-300 hover:bg-sky-700;
+  }
+}
+
+/* ===== Bagian Addin: Dokter (palet sky / green / slate) ===== */
 @layer components {
   #doctor {
     @apply py-16;
@@ -13,7 +102,7 @@
     @apply mx-auto max-w-6xl px-4;
   }
   #doctor h2 {
-    @apply mb-10 text-center text-3xl font-bold text-gray-800;
+    @apply mb-10 text-center text-3xl font-bold text-slate-900;
   }
 
   .doctor-grid {
@@ -21,24 +110,240 @@
   }
 
   .doctor-card {
-    @apply flex flex-col items-center rounded-xl bg-white p-6 text-center shadow transition hover:shadow-lg;
+    @apply flex flex-col items-center rounded-xl border border-slate-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-sky-600 hover:shadow-lg;
   }
   .doctor-card img {
     @apply h-32 w-32 rounded-full object-cover;
   }
   .doctor-card h3 {
-    @apply mt-4 text-lg font-semibold text-gray-800;
+    @apply mt-4 text-lg font-semibold text-slate-800;
   }
   .doctor-specialty {
-    @apply text-sm font-medium text-teal-600;
+    @apply text-sm font-medium text-green-600;
   }
   .doctor-schedule {
-    @apply mt-1 text-sm text-gray-500;
+    @apply mt-1 text-sm text-slate-500;
   }
   .doctor-card button {
-    @apply mt-4 rounded-lg bg-teal-600 px-5 py-2 text-white transition hover:bg-teal-700;
+    @apply mt-4 rounded-lg bg-sky-600 px-5 py-2 text-white transition hover:bg-sky-700;
   }
 }
+/* ===== Bagian Addin: filter dokter ===== */
+@layer components {
+  .filter-bar {
+    @apply flex flex-wrap justify-center gap-2 mb-8;
+  }
+  .filter-btn {
+    @apply px-5 py-2 rounded-full border font-medium cursor-pointer transition-all duration-300 hover:shadow-md bg-white text-slate-600 border-slate-300;
+  }
+
+  /* ===== Modal detail dokter ===== */
+  #modal-dokter {
+    @apply fixed inset-0 z-[1000] items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm;
+  }
+  .modal-box {
+    @apply relative bg-white w-full max-w-[760px] max-h-[92vh] overflow-y-auto rounded-3xl shadow-2xl;
+  }
+  .modal-close {
+    @apply absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 text-slate-600 text-2xl leading-none shadow transition-all duration-300 hover:bg-red-50 hover:text-red-500 hover:rotate-90;
+  }
+  .modal-header {
+    @apply relative overflow-hidden bg-gradient-to-br from-sky-600 via-sky-500 to-green-500 text-white px-6 sm:px-8 pt-8 pb-20;
+  }
+  .m-blob--a {
+    @apply w-44 h-44 bg-white/10 -top-12 -left-10;
+  }
+  .m-blob--b {
+    @apply w-28 h-28 bg-white/10 bottom-2 right-10;
+  }
+  .modal-eyebrow {
+    @apply relative text-xs uppercase tracking-widest;
+  }
+  .modal-body {
+    @apply relative px-6 sm:px-8 pb-8 -mt-14;
+  }
+  .modal-profile {
+    @apply flex flex-col sm:flex-row sm:items-end gap-4;
+  }
+  .modal-photo {
+    @apply w-32 h-32 sm:w-36 sm:h-36 rounded-2xl object-cover border-4 border-white shadow-xl bg-slate-100;
+  }
+  .modal-name-wrap {
+    @apply pb-1;
+  }
+  .modal-name {
+    @apply text-2xl font-bold text-slate-900;
+  }
+  .modal-badge {
+    @apply inline-block mt-1 px-3 py-1 rounded-full bg-green-50 text-green-700 text-sm font-semibold;
+  }
+
+  /* Statistik */
+  .modal-stats {
+    @apply grid grid-cols-3 gap-3 mt-6;
+  }
+  .stat-card {
+    @apply bg-sky-50 rounded-2xl p-4 text-center;
+  }
+  .stat-card--green {
+    @apply bg-green-50;
+  }
+  .stat-value {
+    @apply text-2xl font-bold text-sky-600;
+  }
+  .stat-card--green .stat-value {
+    @apply text-green-600;
+  }
+  .stat-value--small {
+    @apply text-sm leading-tight pt-1.5;
+  }
+  .stat-label {
+    @apply text-xs text-slate-500 mt-0.5;
+  }
+  .stat-card--time .stat-label {
+    @apply mt-1;
+  }
+
+  /* Pendidikan, tentang, jadwal, bidang */
+  .modal-education {
+    @apply flex items-start gap-3 mt-5 p-4 rounded-2xl border border-slate-200;
+  }
+  .modal-education-icon {
+    @apply text-2xl;
+  }
+  .modal-label {
+    @apply text-xs text-slate-500;
+  }
+  .modal-education-value {
+    @apply font-semibold text-slate-800 text-sm;
+  }
+  .modal-section {
+    @apply mt-6;
+  }
+  .modal-section h4 {
+    @apply font-semibold text-slate-900 mb-2;
+  }
+  .modal-about {
+    @apply text-sm text-slate-600 leading-relaxed;
+  }
+  .modal-days {
+    @apply grid grid-cols-7 gap-2 text-center;
+  }
+  .modal-chips {
+    @apply flex flex-wrap gap-2;
+  }
+
+  /* Aksi */
+  .modal-actions {
+    @apply mt-8 flex flex-col sm:flex-row gap-3;
+  }
+  .modal-cta {
+    @apply flex-1 text-center bg-green-600 text-white py-3 rounded-full font-bold no-underline transition-all duration-300 hover:bg-green-700 hover:-translate-y-0.5;
+  }
+  .modal-cancel {
+    @apply px-6 py-3 rounded-full border border-slate-300 text-slate-600 font-medium transition-colors hover:bg-slate-50;
+  }
+}
+
+/* ===== Bagian Geo: Jam Layanan, Kontak, FAQ ===== */
+@layer components {
+  .contact-grid {
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .info-card {
+    @apply bg-white rounded-xl border border-slate-200 transition-all duration-300 hover:shadow-lg hover:border-sky-600;
+    padding: 30px 25px;
+  }
+  .info-card h3 {
+    @apply font-semibold text-xl text-slate-800 mb-4;
+  }
+  .info-icon {
+    @apply text-4xl w-[70px] h-[70px] leading-[70px] text-center rounded-full mb-4;
+  }
+  .info-icon--sky {
+    @apply bg-blue-50;
+  }
+  .info-icon--green {
+    @apply bg-green-50;
+  }
+
+  /* Jam layanan */
+  .hours-list {
+    @apply list-none text-sm text-slate-600;
+  }
+  .hours-list li {
+    @apply flex justify-between py-2 border-b border-slate-100;
+  }
+  .hours-list li:last-child {
+    @apply border-b-0;
+  }
+  .hours-value {
+    @apply font-medium text-slate-800;
+  }
+  .hours-closed {
+    @apply font-medium text-red-500;
+  }
+  .hours-note {
+    @apply text-xs text-slate-500 mt-4;
+  }
+
+  /* Kontak */
+  .contact-list {
+    @apply list-none text-sm text-slate-600 flex flex-col gap-3;
+  }
+  .contact-label {
+    @apply block font-medium text-slate-800;
+  }
+  .contact-list a {
+    @apply text-sky-600 no-underline hover:underline;
+  }
+
+  /* Kartu ajakan */
+  .cta-card {
+    @apply bg-sky-600 text-white rounded-xl flex flex-col justify-center text-center;
+    padding: 30px 25px;
+  }
+  .cta-card-icon {
+    @apply text-4xl mb-3;
+  }
+  .cta-card h3 {
+    @apply font-semibold text-xl mb-2;
+  }
+  .cta-card p {
+    @apply text-sm opacity-95 mb-5;
+  }
+  .cta-card-button {
+    @apply inline-block bg-green-600 text-white px-6 py-2.5 no-underline rounded-full font-bold transition-all duration-300 hover:bg-green-700 hover:-translate-y-0.5;
+  }
+
+  /* FAQ */
+  .faq-section {
+    @apply py-[70px] px-5 max-w-[800px] mx-auto;
+  }
+  .faq-list {
+    @apply flex flex-col gap-3;
+  }
+  .faq-item {
+    @apply bg-white border border-slate-200 rounded-xl overflow-hidden transition-colors duration-300 hover:border-sky-600;
+  }
+  .faq-item summary {
+    @apply flex justify-between items-center cursor-pointer list-none px-5 py-4 font-semibold text-slate-800;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-icon {
+    @apply text-sky-600 text-2xl transition-transform duration-300;
+  }
+  .faq-item[open] .faq-icon {
+    @apply rotate-45;
+  }
+  .faq-item p {
+    @apply px-5 pb-4 text-slate-500 text-sm leading-relaxed;
+  }
+}
+
 /* ===== Animasi modal dokter ===== */
 @keyframes naik {
   from { opacity: 0; transform: translateY(20px); }
